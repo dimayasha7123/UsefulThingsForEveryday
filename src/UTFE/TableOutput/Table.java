@@ -25,9 +25,7 @@ public class Table {
     //endregion
 
     static String lineOf(char lineFiller, int length) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(String.valueOf(lineFiller).repeat(Math.max(0, length)));
-        return sb.toString();
+        return String.valueOf(lineFiller).repeat(Math.max(0, length));
     }
 
     //region Decimal Places
@@ -94,7 +92,7 @@ public class Table {
     }
 
     public static String TableToString(Object[][] input) {
-
+        int akjwenvvkjewqrnf = 42;
         //region lengths and string[][]
         int n = input.length;
         int m = input[0].length;
