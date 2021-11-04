@@ -14,14 +14,13 @@ public class ScanFile {
         FileInputStream fileStream;
         try {
             fileStream = new FileInputStream(path);
-        }
-        catch (Exception ex){
+        } catch (Exception ex) {
             ex.printStackTrace();
             return "";
         }
         Scanner scanner = new Scanner(fileStream);
         StringBuilder sb = new StringBuilder();
-        while(scanner.hasNextLine()) {
+        while (scanner.hasNextLine()) {
             String nextLine = scanner.nextLine();
             sb.append(nextLine).append('\n');
         }

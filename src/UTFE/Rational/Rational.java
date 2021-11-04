@@ -32,7 +32,7 @@ public class Rational {
         normSign();
     }
 
-    private void normSign(){
+    private void normSign() {
         if (sign >= 0) sign = 1;
         else sign = -1;
     }
@@ -106,7 +106,7 @@ public class Rational {
         return output;
     }
 
-    public double toDouble(){
+    public double toDouble() {
         return (double) sign * n / d;
     }
 
