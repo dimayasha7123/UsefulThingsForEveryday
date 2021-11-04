@@ -24,9 +24,10 @@ public class MainTest {
     }
 
     public static void main(String[] args) {
-        String[] testArr1 = new String[] {"Привет, \nкак дела?", "Привет, \n как дела?\nА?\nА? А?", "Норм", "А?\nА? А?\nА? А? А?\nА? А? А? А?"};
-        Object[] testArr2 = new Object[] {123, 234.2553, "Здарова еще раз", "Hello, \nworld!"};
-        Object[][] testArr = new Object[][] {testArr1, testArr2};
+        String[] testArr1 = new String[] {"Привет, \nкак дела?", "Привет, \n как дела?\nА?\nА? А?", "", "А?\nА? А?\nА? А? А?\nА? А? А? А?"};
+        Object[] testArr2 = new Object[] {123, 234.2553, "", "Hello, \nworld!"};
+        Object[] tesrArr3 = new Object[] {"", null, "", null};
+        Object[][] testArr = new Object[][] {testArr1, testArr2, tesrArr3};
         System.out.println(Table.TableToString(testArr));
     }
 }

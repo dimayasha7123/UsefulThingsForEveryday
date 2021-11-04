@@ -45,6 +45,7 @@ public class Table {
     //endregion
 
     static String stringConverter(Object obj) {
+        if (obj == null) return "";
         if (obj instanceof Byte || obj instanceof Short || obj instanceof Integer ||
                 obj instanceof Long || obj instanceof Double || obj instanceof Float) {
             return new DecimalFormat(GetFormatString()).format(obj);
@@ -88,7 +89,8 @@ public class Table {
             sb.append(border);
             for (int j = 0; j < parsedData[0].length; ++j) {
                 String formatString = " " + "%-" + (lengths[j] - 2) + "s ";
-                sb.append(String.format(formatString, parsedData[i][j]));
+                if (lengths[j] == 2) formatString = " %-1s";
+                    sb.append(String.format(formatString, parsedData[i][j]));
                 if (j != parsedData[0].length - 1) sb.append(middle);
                 else sb.append(border);
             }
@@ -104,6 +106,8 @@ public class Table {
         for (String s : splittedStr) if (s.length() > max) max = s.length();
         return max;
     }
+
+    //todo добавить возможность выбора выводить ли толстым header
 
     public static String TableToString(Object[][] input) {
         //region lengths and string[][]
