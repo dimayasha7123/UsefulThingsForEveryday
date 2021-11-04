@@ -118,7 +118,6 @@ public class Table {
         String[][] inputStr = new String[n][m];
         for (int i = 0; i < m; ++i) {
             for (int j = 0; j < n; ++j) {
-                //todo обработка пустых строк и null
                 inputStr[j][i] = stringConverter(input[j][i]);
                 lengths[i] = Math.max(countLength(inputStr[j][i]), lengths[i]);
             }
@@ -163,11 +162,12 @@ public class Table {
         for (int i = 1; i < n; ++i) {
             sb.append(MakeTableDataString(lengths, inputStr[i], bodyVertBorder, bodyThinVert));
             //sb.append('\n');
-            if (i != n - 1)
+            if (i != n - 1) {
                 sb.append(MakeTableHorizontalString(lengths, bodyMidLeft, bodyThinCross, bodyMidRigth, bodyThinHoriz));
+                sb.append('\n');
+            }
             else
                 sb.append(MakeTableHorizontalString(lengths, bodyDownLeft, bodyDownMid, bodyDownRight, bodyHorizBorder));
-            sb.append('\n');
         }
         //endregion
 
